@@ -224,7 +224,7 @@ for i in range(row):
     for j in range(columns):
         print(symbol, end="")
     print() # để xuống dòng
----------------------------------------------------------------
+#----------------------------------------------------------------------------------------#
 #14  loop control statements : change a loops excute from its normal sequence
 # break : used to exit a loop
 # continue : skips to the next iteration of the loop
@@ -332,3 +332,40 @@ print(food.intersection(desert)) # trả về các phần tử trùng lặp
 # for x in food: 
 #     print(x)
 
+# 19 dictionary : a collection which is unordered, changeable and indexed
+# dùng để truy cập vào các phần tử trong dictionary thông qua key
+# person = {
+#     'name' : "John",
+#     'age' : 36,
+#     'country' : "USA" 
+# }
+
+# person.update({"job" : "developer"}) # thêm 1 key vào dictionary
+# person.pop("age") # xóa key và value trong dictionary
+# del person["country"] # xóa key và value trong dictionary
+
+# print(person["name"])
+# print(person.get("age"))
+# print(person["country"])
+# print(person.get("name")) # trả về giá trị của key name vd : "name" là key 
+# print(person.keys()) # trả về tất cả các key trong dictionary
+# print(person.values()) # trả về tất cả các value trong dictionary
+# print(person.items()) # trả về tất cả các item trong dictionary theo từng cặp key và value
+
+# for key, value in person.items(): # giống .items nhưng sẽ không có ngoặc
+#     print(key, value)
+#----------------------------------------------------------------------------------------#
+#20 index operator [] : used to access an item in a list, tuple, or string'
+introname = "money D. LUFFY"
+
+if(introname[:5].islower()): # kiểm tra chuỗi từ 0 đến 5 có viết thường không
+    introname = introname.capitalize() # sau đó viết hoa chữ cái đầu tiên
+    print(introname)
+
+fst_name = introname[:5].upper()
+lst_name = introname[6:].lower()
+final_name = introname[-1]
+
+print(fst_name)
+print(lst_name)
+print(final_name)
