@@ -369,3 +369,87 @@ final_name = introname[-1]
 print(fst_name)
 print(lst_name)
 print(final_name)
+
+#----------------------------------------------------------------------------------------#
+
+#21 : a block of code which is excuted only when it is called 
+# sau khi khai báo hàm ra thì phải gọi hàm đó ra ngoài để chạy vd : hello()
+# cách 1 
+# def hello():
+#     print("Hello Guys : " + input("Enter your name : "))
+#     print("Welcome to Python")
+# hello()
+
+# cách 2 
+# def hello(name , lst ,age):
+#     print("Hello Guys : " + name+" "+str(age)+" "+lst)
+#     print("Welcome toPython")
+# hello("Kito", "kid" , 19)
+
+#----------------------------------------------------------------------------------------#
+
+#22 return statement : hàm dùng để trả về giá trị của một hàm 
+# def math(a,b):
+#     return a + b
+# print(math(2,3)) # in ra 5
+
+# # bài tập in ra giai thừa 
+# def factorial(n):
+#     if n == 0 or n == 1:
+#         return 1
+#     else: 
+#         return n * factorial(n-1)
+# print("giai thừa của n là :",factorial(5))
+#----------------------------------------------------------------------------------------#
+
+#23 keyword arguments : truyền giá trị vào hàm theo tên của tham số mà không cần tuân theo tuần tự 
+
+# def greeting(fst_name , lst_name , age):
+#     print("Hello " + fst_name + " " + lst_name + " " + str(age))
+# greeting(lst_name = "Kito", fst_name = "Kid", age = 19)
+# bạn có thể thay đổi vị trí của tham số khi truyền vào hàm vd 
+# greeting(fst_name = "Kito", lst_name = "Kid", age = 19) 
+
+#----------------------------------------------------------------------------------------#
+
+#24 nested function : hàm lồng nhau
+#print(round(abs(float(input("Enter a number: ")))))
+# nhập vào số thực sau đó lấy giá trị tuyệt đối và làm tròn số đó vd : input = 10.5 => output = 11
+# vì trên là câu rút gọn 
+# cách viết dài hơn
+# def process_and_print_number():
+    """
+     Hàm này yêu cầu người dùng nhập vào một số thực, tính giá trị tuyệt đối,
+     làm tròn và in ra kết quả cuối cùng.
+     """
+#     number = float(input("Enter a number: "))
+#     absolute_value = abs(number)
+#     rounded_value = round(absolute_value)
+#     print("Kết quả sau khi xử lý là:", rounded_value)
+
+# # Gọi hàm để thực thi
+# process_and_print_number()
+
+#----------------------------------------------------------------------------------------#
+#25 scope : phạm vi của biến có thể truy cập 
+# có 4 loại phạm vi 
+# 1. local scope : phạm vi cục bộ 
+# 2. enclosing scope : phạm vi bao quanh
+# 3. global scope : phạm vi toàn cục
+# 4. built-in scope : phạm vi mặc định  
+
+x = "global"
+
+def outer():
+    # enclosing scope
+    x = "enclosing"
+
+    def inner():
+        # local scope
+        x = "local scope"
+        print("phạm vi cục bộ:", x)
+    inner() 
+
+outer() # gọi lại hàm outer và không in ra vì không có print nào trong hàm outer
+print("bên ngoài tất cả hàm:", x)
+
