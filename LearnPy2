@@ -1,4 +1,4 @@
-# arg : mảng || stuff : tương tự   
+#26 arg : mảng || stuff : tương tự   
 def sum_array(*arr):
     sum = 0 
     arr = list(arr)
@@ -8,3 +8,15 @@ def sum_array(*arr):
     return sum
 
 print(sum_array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
+
+# ----------------------------------------------#
+
+#27 **kwargs dùng để chuyển đổi một số lượng lớn đối số từ khóa kh xác định vào một hàm dưới dạng dictionary
+def infor(**kwargs):
+    for key,value in kwargs.items():
+        print(value,end=" ") # end=" " giúp in gtri trên 1 dòng
+infor(name="Alice", age=30, city="New York") # đây là những giá trị sẽ được gọi và in ra thông qua value
+
+# ----------------------------------------------#
+
+
