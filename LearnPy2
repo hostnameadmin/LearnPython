@@ -19,4 +19,63 @@ infor(name="Alice", age=30, city="New York") # đây là những giá trị sẽ
 
 # ----------------------------------------------#
 
+#28 str.format() : hàm dùng để định dạng chuỗi trong python 
+# animal = 'cow'
+# item = 'table'
+# name = 'bro'
 
+# print('the {} under the {} .'.format(animal, item))
+# print('the {1} under the {0} .'.format(animal, item)) # position arguments 
+# print('the {animal} under the {item} .'.format(animal='dog', item='tree')) # cũng có thể truyền tham số bằng cách này 
+# text = 'the {} under the {} .' #và cả cách này nữa
+# print(text.format(animal,item))
+
+# print('Hello , my name is {:10}.Nice to meet you .'.format(name)) # đùng để chèn vào thêm các giá trị và cũng có thể dùng để căn lề 
+# print('Hello , my name is {:<10}.Nice to meet you .'.format(name)) # căn lề phải 
+# print('Hello , my name is {:>10}.Nice to meet you .'.format(name)) #căn lề trái
+# print('Hello , my name is {:^10}.Nice to meet you .'.format(name))# căn giữa
+
+# number = 1234
+# #print('The number is {:.2f}.'.format(number)) # lấy 2 số sau dấu .
+# print('The number is {:,}'.format(number)) # , dùng để phân cách hàng nghìn cho số
+# print('The number is {:b}'.format(number))# chuyển đổi số thành nhị phân  
+# print('The number is {:o}'.format(number)) # chuyển đổi số thành bát phân
+# print('The number is {:x}'.format(number)) # chuyển đổi số thành thập lục phân 
+# print('The number is {:e}'.format(number)) # chuyển đổi số thành dạng số mũ (khoa học)
+# ----------------------------------------------# 
+
+#29 import random : hàm ngẫu nhiên
+# import random
+
+# x = random.randint(1,10) # in ra ngẫu nhiên từ 1 - 10  
+# y = random.random() # in ra ngẫu nhiên 
+
+# card = [2,3,4,5,6,7,8,9,10,'J','Q','K','A']
+# z = random.choice(card) # trả về ngẫu nhiên từ một chuỗi
+# random.shuffle(card) # trộn ngẫu nhiên 
+
+# print(card)
+
+# ----------------------------------------------# 
+
+#30 exception : ngoại lệ sẽ giúp bạn xử lý lỗi khi giá trị trả về không đúng 
+
+# try:
+#     numerator = int(input("input your numerator : "))
+#     denominator = int(input("input your denominator : "))
+
+#     result = numerator / denominator
+    
+# except ZeroDivisionError as e: # hàm xử lý lỗi khi cố gắng chia cho 0
+#     print(e) # nếu không as e thì bạn sẽ kh thể in ra lỗi cụ thể cho từng except
+#     print("Khong the chia cho 0")
+# except ValueError as e: # hàm xử lý lỗi khi cố gắng nhập chữ 
+#     print(e)
+#     print("Can't input string !!!")
+# except Exception as e:  # cơ sở cho tất cả ngoại lệ
+#     print(e)
+#     print('somthing went wrong !!!')
+# else : 
+#     print(result)
+# finally: # dù lỗi hay không thì vẫn in ra giá trị   
+#     print("this will always excute ")
