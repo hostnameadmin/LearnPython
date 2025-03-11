@@ -79,3 +79,17 @@ infor(name="Alice", age=30, city="New York") # đây là những giá trị sẽ
 #     print(result)
 # finally: # dù lỗi hay không thì vẫn in ra giá trị   
 #     print("this will always excute ")
+# ----------------------------------------------# 
+
+#31 import os : đường dẫn path cung cấp hàm để tương tác với hệ điều hành và làm việc với đường dẫn tệp
+import os   
+path = 'C:\\Users\\Admin\\Desktop\\txt.txt' # dùng dấu \ là ký tự thoát dùng để biểu hiện các ký tự đặc biệt
+
+if os.path.exists(path):
+    print("this location exists ")
+    if os.path.isfile(path):
+        print('this is a file')
+    elif os.path.isdir(path):
+        print('this is a directory ! ')
+else:
+    print("this location doesn't exists ")
