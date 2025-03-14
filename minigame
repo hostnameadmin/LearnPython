@@ -1,37 +1,43 @@
 import random
 
-robot = ['keo','bua ','bao']
-player = None
+while True:
+    robot = ['keo','bua ','bao']
+    player = None
 
-cpt=random.choice(robot)
+    cpt=random.choice(robot)
 
-while player not in robot:
-    player = input('nhập lựa chọn của bạn: ')
-try:
-    if player == cpt :
-        print(cpt)
-        print(player)
-        print('hòa nhau')
-    elif player == 'keo':
-        print(cpt)
-        print(player)
-        if cpt == 'bua':
-            print('ban thua!!!')
-        else:
-            print('ban thang ^^')
-    elif player == 'bua':
-        print(cpt)
-        print(player)
-        if cpt == 'bao':
-            print('ban thua!!!')
-        else:
-            print('ban thang ^^')
-    elif player == 'bao':
-        print(cpt)
-        print(player)
-        if robot == 'keo':
-            print('ban thua!!!')
-        else:
-            print('ban thang ^^')
-except Exception:
-    print("hãy nhập sự lựa chọn sẵn có :' keo ',' bua ',' bao '")
+    while player not in robot:
+        player = input('nhập lựa chọn của bạn: ')
+    try:
+        if player == cpt :
+            print(cpt)
+            print(player)
+            print('hòa nhau')
+        elif player == 'keo':
+            print(cpt)
+            print(player)
+            if cpt == 'bua':
+                print('ban thua!!!')
+            else:
+                print('ban thang ^^')
+        elif player == 'bua':
+            print(cpt)
+            print(player)
+            if cpt == 'bao':
+                print('ban thua!!!')
+            else:
+                print('ban thang ^^')
+        elif player == 'bao':
+            print(cpt)
+            print(player)
+            if robot == 'keo':
+                print('ban thua!!!')
+            else:
+                print('ban thang ^^')
+    except Exception:
+        print("hãy nhập sự lựa chọn sẵn có :' keo ',' bua ',' bao '")
+    play_again = input("chơi lại không ! Có / không : ")
+
+    if play_again != 'Co' :
+        break
+print('goodbye!') 
