@@ -121,5 +121,18 @@ shutil.rmtree('tree.txt')
 #     print(f'ERROR!!!{e}')
 
 # os.rmdir(path) # rmdir dùng để xóa thư mục
+# ----------------------------------------------# 
+
+#37 Modules : có thể gọi lại file code khác bằng import 
+# import learn 
+# from learn import hello,bye 
+
+# hello()
+# bye()
+# help('modules') # gợi ý in ra các hàm có thể sử dụng trong mudules
+
+
+
+
 
 
