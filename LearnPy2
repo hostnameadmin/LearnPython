@@ -93,3 +93,33 @@ if os.path.exists(path):
         print('this is a directory ! ')
 else:
     print("this location doesn't exists ")
+
+# ----------------------------------------------# 
+...
+# ----------------------------------------------# 
+
+#36 delect a file 
+import os 
+import stat
+import shutil
+# with open ('test.txt','w') as file :
+#     file.write('This is a test txt!') # hàm tạo tệp tin và ghi vào bên trong text
+# os.chmod('test.txt', stat.S_IREAD)
+
+path = ''
+shutil.rmtree('tree.txt')
+#path = 'C:\\Users\\convo\\OneDrive\\Desktop\\del.txt' , sử dụng địa chỉ path
+
+# try:
+#     os.remove('test.txt') # remove dùng để xóa file 
+   
+# except FileNotFoundError: # ngoại lệ nếu file không tồn tại 
+#     print('file not found')
+# except PermissionError:
+#     print('bạn không có quyền xóa tệp tin này')
+# except OSError as e:
+#     print(f'ERROR!!!{e}')
+
+# os.rmdir(path) # rmdir dùng để xóa thư mục
+
+
