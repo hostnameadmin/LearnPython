@@ -95,7 +95,48 @@ else:
     print("this location doesn't exists ")
 
 # ----------------------------------------------# 
-...
+#32 open , read ,closed file
+try: 
+
+    with open('C:\\Users\\Admin\\Desktop\\txt.txt') as file:
+        print(file.read()) 
+        # print(file.closed) # cho phép đóng file tự động
+except FileNotFoundError:
+    print('that file was found')
+
+# ----------------------------------------------#
+#33 write a file : 'w' chế độ ghi còn 'r' là đọc 'a' thêm mới nếu trong file đã tồn tại 
+# text = '\nYooooooo\nhave a nice day!\n'
+
+# with open('C:\\Users\\Admin\\Desktop\\txt.txt', 'w')as file: 
+#     file.write(text)    
+#     # print(file.read())
+
+# ----------------------------------------------#
+#34 copy file 
+# import shutil # thư viện cho phép copy
+# shutil.copyfile('txt.txt', 'test.txt') #copy từ src - dst
+# hạn chế : nếu đã tồn tại nội dung sẽ bị ghi đè , chỉ sao chép nội dung và không sao chép các thuộc tính như quyền truy cập , thgian tạo và sửa đổi
+# copy : ... . sao chép được thêm các thuộc tính quyền truy cập , nhưng cũng kh sao chép được thgian tạo và sửa đổi
+# copy2: vẫn sẽ bị ghi đè , và có thể sao chép toàn bộ
+
+# ----------------------------------------------#
+
+#35 move a file     
+# src = 'test.txt'
+# destination ='C:\\Users\\Admin\\Desktop\\test.txt'
+src = 'holder'
+destination ='C:\\Users\\Admin\\Desktop\\holder'
+
+try: 
+    if os.path.exists(destination):
+        print('there is already a file there ')
+    else:
+        os.replace(src, destination)
+        print(src+ 'was moved')
+except FileNotFoundError:
+    print(src+" was not found")
+
 # ----------------------------------------------# 
 
 #36 delect a file 
