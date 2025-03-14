@@ -38,6 +38,6 @@ while True:
         print("hãy nhập sự lựa chọn sẵn có :' keo ',' bua ',' bao '")
     play_again = input("chơi lại không ! Có / không : ")
 
-    if play_again != 'Co' :
+    if play_again != 'co' :
         break
 print('goodbye!') 
