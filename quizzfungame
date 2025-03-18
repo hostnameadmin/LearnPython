@@ -1,0 +1,60 @@
+questions = {
+    'What is Python? ': 'A',
+    'What year was Python created? ': 'B',
+    'Who is the father of Python? ': 'C',
+    'What is the capital of Vietnam? ': 'D'
+}
+
+options = [
+    ['A. Programming Language', 'B. Java', 'C. C++', 'D. Ruby'],
+    ['A. 1991', 'B. 1989', 'C. 2000', 'D. 2010'],
+    ['A. Steve Jobs', 'B. Elon Musk', 'C. Guido van Rossum', 'D. Bill Gates'],
+    ['A. Ho Chi Minh City', 'B. Da Nang', 'C. Hue', 'D. Hanoi']
+]
+
+# hàm new game , hàm check answer, hàm display score, hàm play again
+## Lưu trữ đáp án của người chơi , Đếm số câu trả lời đúng , Biến đếm số thứ tự câu hỏi
+
+def new_game(): # hàm tạo game mới 
+    guesses = []
+    correct_guesses = 0 
+    num_question = 0 
+
+    for key in questions:
+        print('=============================')
+        print(key)
+        for a in options[num_question]:
+            print(a)
+        guess = input('Enter (A, B, C, or D): ').upper()
+        guesses.append(guess)
+        correct_guesses += answer(questions[key] , guess)
+
+        num_question += 1 
+
+    display_point(correct_guesses,len(questions))
+    play_again() # gọi lại hàm paly_again() 
+
+def answer(answer , guess): # hàm trả về đáp án đúg 
+    if answer == guess :
+        print('Yupp!!!')
+        return 1 
+    else:
+        print('Oh My God ~~~')
+        return 0 
+    
+def display_point(correct_guesses,total_questions): # hàm tính điểm 
+    print('=============================')
+    print('RESULT')
+    print(f'Correct answers : {correct_guesses}/{total_questions}')
+    score = (correct_guesses)/(total_questions) *100 
+    print(f'Your score is : {score: .2f}%')
+ 
+
+def play_again(): # hàm chơi lại 
+    response = input('Do you want to play again? (Yes/No):').lower()
+    if response == 'yes':
+        new_game()
+    else:
+        print('Thanks for playing!!!')
+
+new_game() # gọi hàm new_game() để chạy chương trình
