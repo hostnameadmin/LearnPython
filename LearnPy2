@@ -142,7 +142,7 @@ except FileNotFoundError:
 #36 delect a file 
 import os 
 import stat
-import shutil
+import shutil # là 1 thư viện cần được khai báo và gọi lại 
 # with open ('test.txt','w') as file :
 #     file.write('This is a test txt!') # hàm tạo tệp tin và ghi vào bên trong text
 # os.chmod('test.txt', stat.S_IREAD)
