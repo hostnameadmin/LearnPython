@@ -1,0 +1,129 @@
+Phần 2 : Thông tin nâng cao 
+- Class Method & Static Method 
+- Property Decorator ( @property )
+- Magic Method (Dunder Methods )
+- MetaClass - Lập trình cấp cao python 
+
+I . Class Method & Static Methods 
+- Có 3 phương thức chính trong class 
+ 1.Instance method ( phương thức bth - dùng self )
+ 2.Class Method ( @classmethod)
+ 3.Static Method (@staticmethod)
+
+1.Instance Method ( đã làm nhiều trong OOP ), cho nên bỏ qua phần này nhé
+2.Class Method & Static method
+- Phương thức này dùng (cls) thay vì (self) , cho phép truy cập vào biến lớn của lớp , không phải phải của từng đối tượng liên lẻ 
+- Static method không cho phép self hoặc cls , chỉ hoạt động như hàm bth bên trong class 
+- Dùng @staticmethod khi không cần truy cập thuộc tính của class hay instance.
+[
+      class wheels:
+          Car = 4 
+      
+          def __init__ (self, brand):
+              self.brand = brand
+      
+          @classmethod
+          def change_wheels(cls, new_wheels):
+              cls.Car = new_wheels
+          
+      
+      W = wheels('Toyota')
+      print(W.Car)
+      W.change_wheels(6)
+      print(W.Car)
+# @static
+      class math:
+          @staticmethod
+          def add(x,y):
+              return x+y
+      print(math.add(5,6))      ]
+
+II . Property Decorator (@property)
+- Dùng để tạo getter/setter thuộc tính mà không cần gọi như phương thức 
+- Giúp kiểm soát việc truy cập và thay đổi biến private dễ dàng 
+[
+      class Employee:
+          def __init__ (self, name , salary):
+              self.name = name
+              self._salary = salary
+      
+          @property
+          def salary(self):
+              return self._salary
+          
+          @salary.setter 
+          def salary(self, new_salary):
+              if new_salary > 0 :
+                  self._salary = new_salary
+              else:
+                  print('salary must be greater than 0')
+      
+      e = Employee('John', 1000)
+      # print(e.salary)
+      # e.salary = 8000
+      # print(e.salary)
+      # e.salary = -1001 # sẽ hiển thị dòng của phần else 
+      # print(e.salary)      ]
+
+III . Magic Method (Dunder Methods - Hàm có dấu __ 2 bên)    
+- Các phương thức đặc biệt giúp code linh động hơn 
+      __init__	Hàm khởi tạo
+      __str__	Hiển thị string khi print(obj)
+      __repr__	Trả về thông tin khi dùng repr(obj)  
+      __len__	Dùng len(obj) để trả về độ dài
+      __eq__	Dùng == để so sánh
+      __add__	Dùng + với đối tượng
+[ 
+# ví dự về __init__ , __str__ , __len__
+      class book:
+          def __init__ (self , title , pages):
+              self.title = title
+              self.pages = pages
+          def ___str__ (self):
+              return f'{self.title} has {self.pages} pages'
+      
+          def __len__(self):
+              return self.pages
+      
+      b = book('Python', 200)
+      print(b)
+      print(len(b))    
+
+# ví dụ về __eq__ và __add__
+
+      class Money:
+          def __init__(self, amount):
+              self.amount = amount
+      
+          def __eq__(self, other):
+              return self.amount == other.amount
+      
+          def __add__(self, other):
+              return Money(self.amount + other.amount)
+      
+      m1 = Money(500)
+      m2 = Money(500)
+      m3 = Money(1000)
+      
+      print(m1 == m2)  # Output: True (Nhờ `__eq__`)
+      print(m1 + m2)   # Output: <__main__.Money object at ...>
+      print((m1 + m2).amount)  # Output: 1000      ]
+
+IV . Metaclass - Lập trình cao cấp python
+- Cơ chế tạo class tự động ,  hữu ích nếu bạn định nghĩa quy tắc chung cho nhiều class khác nhau 
+- về nhà xem lại phần 4 và làm bài tập thực hành trong [https://chatgpt.com/share/67dea7ce-8b90-8006-ac9f-a3a5a2a74887]
+[
+class MyMeta(type):
+    def __new__(cls, name, bases, attrs):
+        attrs['greet'] = lambda self: f"Hello from {name}"
+        return super().__new__(cls, name, bases, attrs)
+
+class MyClass(metaclass=MyMeta):
+    pass
+
+obj = MyClass()
+print(obj.greet())  # Output: Hello from MyClass      ]
+
+
+
+
