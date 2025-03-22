@@ -110,6 +110,30 @@ math = Math()
 
 print(math.add(2,4,5)
 
++Operator overloading ( nạp chồng toán tử )
+ Cho phép tái định nghĩa các hoạt động toán tử ( +, -, , /, ==, ... ) sử dụng phương thức đặc biệt 
+
+🔹 __add__ → Nạp chồng toán tử +
+🔹 __sub__ → Nạp chồng toán tử -
+🔹 __mul__ → Nạp chồng toán tử *
+🔹 __eq__ → Nạp chồng toán tử ==
+[
+  class Vector():
+      def __init__(self,x,y):
+          self.x = x
+          self.y = y
+  
+      def __add__(self,other):
+          return Vector(self.x + other.x, self.y + other.y)
+  
+      def __str__(self):
+          return f'Vector({self.x},{self.y})'
+  
+  v1 = Vector(2, 3)
+  v2 = Vector(4, 5)
+  v3 = v1 + v2 
+  
+  print(v3)   ]
 
 1.4 Tính trừu tượng
 + Giúp ẩn các chi tiết và chỉ hiển thị các thông tin cần thiết 
@@ -158,5 +182,18 @@ M = motobike()
 
 C.start_engine()
 M.start_engine()
+
+# cau hoi 
+Bài tập 1: Ghi đè phương thức
+Viết một lớp Vehicle có phương thức move(). Tạo hai lớp con Car và Boat ghi đè move() như sau:
+Car.move() in ra "Car is driving on the road"
+Boat.move() in ra "Boat is sailing on the water"
+
+Bài tập 2: Nạp chồng toán tử
+Tạo lớp Time để xử lý giờ phút, gồm:
+Thuộc tính hours và minutes.
+Nạp chồng toán tử + để cộng hai thời gian.
+Hiển thị kết quả theo định dạng "HH:MM"
+
 
 
