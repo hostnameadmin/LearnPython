@@ -100,6 +100,16 @@ vd
     for animal in animals:
         print(animal.speak())   ]  
 
++ Method overloading ( nạp chồng phương thức )
+Python không nạp chồng theo số lượng tham số , chỉ dùng tham số mặc định hoặc *arg 
+
+class Math():
+   def add(self, a, b, c=0) # c=0 để cho add() nhận nhiều tham số 
+      return a+b+c
+math = Math()
+
+print(math.add(2,4,5)
+
 
 1.4 Tính trừu tượng
 + Giúp ẩn các chi tiết và chỉ hiển thị các thông tin cần thiết 
@@ -107,7 +117,46 @@ vd
 + Phương thức chỉ có code khai báo và không có thực thi 
 + Trước khi tạo lớp trừu tượng thêm 
 # from abc import ABC , abstractmethod #
+[
+   class Animal(ABC):
+       @abstractmethod
+       def speak(self):
+           pass
+   
+   class dog(Animal):
+       def speak(self):
+           return 'Bark bark'
+   
+   class cat(Animal):
+       def speak(self):
+           return 'Meow meow'
+   
+   dog = dog()
+   cat = cat()
+   
+   print(dog.speak())
+   print(cat.speak())   ]
 
 
+# bài tập thêm 
+
+class Vehicle(ABC):
+    @abstractmethod
+    def start_engine(self):
+        pass
+
+class car(Vehicle):
+    def start_engine(self):
+        print('car is starting engine')
+
+class motobike(Vehicle):
+    def start_engine(self):
+        print('motobike is starting engine')
+
+C = car()
+M = motobike()
+
+C.start_engine()
+M.start_engine()
 
 
