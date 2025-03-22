@@ -77,11 +77,36 @@ vd
       for bird in birds:
           bird.fly()      ]
 
++ Method overriding 
+ Ghi đè để thực thi theo cách riêng 
+[
+    # Lớp cha
+    class Animal:
+        def speak(self):
+            return "Some sound"
+    
+    # Lớp con kế thừa từ Animal
+    class Dog(Animal):
+        def speak(self):  # Ghi đè phương thức speak()
+            return "Gâu gâu"
+    
+    class Cat(Animal):
+        def speak(self):  # Ghi đè phương thức speak()
+            return "Meo meo"
+    
+    # Sử dụng đa hình
+    animals = [Dog(), Cat(), Animal()]
+    
+    for animal in animals:
+        print(animal.speak())   ]  
+
+
 1.4 Tính trừu tượng
 + Giúp ẩn các chi tiết và chỉ hiển thị các thông tin cần thiết 
 + Lớp không thể tạo đối tượng trực tiếp 
 + Phương thức chỉ có code khai báo và không có thực thi 
-+ Trước khi tạo lớp trừu tượng 
++ Trước khi tạo lớp trừu tượng thêm 
+# from abc import ABC , abstractmethod #
 
 
 
