@@ -124,6 +124,99 @@ class MyClass(metaclass=MyMeta):
 obj = MyClass()
 print(obj.greet())  # Output: Hello from MyClass      ]
 
+# bài tập 
+- Bài 1: Class Method vs Static Method
+Tạo class Company có biến class company_name.
 
+Tạo @classmethod thay đổi company_name.
+
+Tạo @staticmethod hiển thị "Welcome to our company!".
+
+- Bài 2: @property
+Tạo class Student có biến _score.
+
+Dùng @property để kiểm tra điểm hợp lệ (0 <= score <= 100).
+
+- Bài 3: Magic Methods
+Tạo class Vector3D(x, y, z), nạp chồng +, -, ==.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# bài giải 
+Bài 1 : 
+
+class Company:
+    cpn = 'honda'
+    def __init__(self,name):
+        self.name = name
+
+    @classmethod
+    def company_name(cls,name):
+        cls.cpn = name
+
+Company.company_name('yamaha')
+print(Company.cpn)
+
+@staticmethod
+def sayhi():
+    print("Welcome to the company")
+sayhi()
+
+Bài 2 : 
 
 
