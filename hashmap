@@ -1,0 +1,11 @@
+[
+      class UseHash:
+          def __init__(self):
+              self.hashmap = {}
+          def add(self,key, value):
+              self.hashmap[key] = value
+      sc = UseHash()
+      
+      sc.add('Huy' , 'Long')
+      sc.add('Olive',21)
+      print(sc.hashmap)      ]
