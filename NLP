@@ -1,0 +1,22 @@
+# Bài 1 Nhập môn NLP và tieefn xử lý văn bản
+#  NLP (Natural Language Processing ) : xử lí ngôn ngữ tự nhiên là lĩnh vực giúp máy tính hiểu và xử lý con người
+# Chat Bot , Dịch ngôn ngữ , trích xất thông tin từ văn bản (Search Engine, AI Summarization)
+# Phân tích cảm xúc (Sentiment Analysis )
+
+# cài thư viện nltk spzcy : py -m pip install nltk spacy
+
+# sau tải mô hình ngôn ngữ vd : tiếng anh  :  python -m spacy download en_core_web_sm
+
+# I. Tokenization ( tách từ ) : chia nhỏ văn bản thành các từ , câu
+import nltk
+from nltk.tokenize import word_tokenize, sent_tokenize
+# word.tokenize : chia văn bản thành các từ riêng lẻ  &&  sent_tokenize : chia văn bản thành các câu riêng lẻ
+nltk.download('punkt') # punkt là một mô hình tiền huấn luyện của nltk để xử lý phân tách văn bản thành câu và từ
+
+text = "AI đang thay đổi thế giới! NLP rất thú vị."
+tokens = word_tokenize(text)
+print("Tokenized words:", tokens)
+
+#-------------------------------------------
+
+# II. Stopwords ( Loại bỏ từ dư thừa ) 
